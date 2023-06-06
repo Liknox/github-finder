@@ -1,7 +1,10 @@
+import { Container } from "components/Container"
 import "./App.css"
 
 function App() {
-	return <div></div>
+	return <Container>
+      1
+   </Container>
 }
 
 export default App
