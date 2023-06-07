@@ -3,11 +3,11 @@ export interface ILocalUser {
 	id: number
 	avatar: string
 	name: string
-	company: string
-	blog: string
-	location: string
-	bio: string
-	twitter: string
+	company: string | null
+	blog: string | null
+	location: string | null
+	bio: string | null
+	twitter: string | null
 	repos: number
 	followers: number
 	following: number

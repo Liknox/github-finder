@@ -1,17 +1,17 @@
-import { IUser } from "../types"
+import { ILocalUser } from "../types"
 
-export const defaultUser: IUser = {
+export const defaultUser: ILocalUser = {
 	login: "Liknox",
 	id: 92331274,
-	avatar_url: "https://avatars.githubusercontent.com/u/92331274?v=4",
+	avatar: "https://avatars.githubusercontent.com/u/92331274?v=4",
 	name: "Nazar Koval",
 	company: null,
 	blog: "",
 	location: "Lviv, Ukraine",
 	bio: "It's no problem in my local.",
-	twitter_username: null,
-	public_repos: 17,
+	twitter: null,
+	repos: 17,
 	followers: 4,
 	following: 3,
-	created_at: "2021-10-11T18:10:04Z",
+	created: "2021-10-11T18:10:04Z",
 }

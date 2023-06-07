@@ -1,6 +1,9 @@
 import { Header } from "./components/Header"
 import { Container } from "./components/Container"
 import { Search } from "./components/Search"
+import { UserCard } from "./components/UserCard"
+
+import { defaultUser } from "./mock"
 
 function App() {
 	return (
@@ -8,10 +11,11 @@ function App() {
 			<Header />
 			<Search
 				hasError
-				onSubmit={e => {
-					console.log(e)
+				onSubmit={() => {
+					return
 				}}
 			/>
+			<UserCard {...defaultUser} />
 		</Container>
 	)
 }
