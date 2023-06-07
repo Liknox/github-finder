@@ -14,20 +14,24 @@ export const Search = ({ hasError, onSubmit }: ISearchProps) => {
 
 	function handleSubmit(e: React.FormEvent) {
 		e.preventDefault()
-		return
+
+		const text = searchRef.current ? searchRef.current.username.value : ""
+
+		if (text) {
+			onSubmit(text)
+			if (searchRef.current) searchRef.current.username.value = ""
+		}
 	}
 
 	return (
-		<form onSubmit={handleSubmit} ref={searchRef}>
+		<form onSubmit={handleSubmit} ref={searchRef} autoComplete="off">
 			<div className={styles.search}>
-				<label htmlFor="search" className={styles.label}></label>
+				<label htmlFor="search" className={styles.label}>
+					<SearchIcon />
+				</label>
 				<input type="text" className={styles.textField} id="search" name="username" placeholder="Search Github user..." />
-            {hasError && (
-               <div className={styles.error}>
-                  No result
-               </div>
-            )}
-            <MyButton>Search</MyButton>
+				{hasError && <div className={styles.error}>No result</div>}
+				<MyButton>Search</MyButton>
 			</div>
 		</form>
 	)
