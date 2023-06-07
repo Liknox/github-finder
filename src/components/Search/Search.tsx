@@ -1,4 +1,3 @@
-import { useRef } from "react"
 import { MyButton } from "../MyButton"
 import SearchIcon from "../../assets/icon-search.svg"
 
@@ -10,21 +9,18 @@ interface ISearchProps {
 }
 
 export const Search = ({ hasError, onSubmit }: ISearchProps) => {
-	const searchRef = useRef<HTMLFormElement | null>(null)
-
-	function handleSubmit(e: React.FormEvent) {
+	function handleSubmit(e: React.FormEvent<HTMLFormElement & { username: HTMLInputElement }>) {
 		e.preventDefault()
+		const text = e.currentTarget.username.value
 
-		const text = searchRef.current ? searchRef.current.username.value : ""
-
-		if (text) {
-			onSubmit(text)
-			if (searchRef.current) searchRef.current.username.value = ""
-		}
+      if (text) {
+         onSubmit(text)
+         e.currentTarget.reset()
+      }
 	}
 
 	return (
-		<form onSubmit={handleSubmit} ref={searchRef} autoComplete="off">
+		<form onSubmit={handleSubmit} autoComplete="off">
 			<div className={styles.search}>
 				<label htmlFor="search" className={styles.label}>
 					<SearchIcon />
