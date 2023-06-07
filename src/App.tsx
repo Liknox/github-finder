@@ -10,7 +10,7 @@ function App() {
 		<Container>
 			<Header />
 			<Search
-				hasError
+				hasError={false}
 				onSubmit={() => {
 					return
 				}}

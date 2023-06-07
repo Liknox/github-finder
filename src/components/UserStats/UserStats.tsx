@@ -1,9 +1,9 @@
 import { ILocalUser } from "../../types"
 import styles from "./UserStats.module.scss"
 
-export type UserStatsProps = Pick<ILocalUser, "followers" | "following" | "repos">
+export type UserStatsPropsType = Pick<ILocalUser, "followers" | "following" | "repos">
 
-export const UserStats = ({ repos, following, followers }: UserStatsProps) => {
+export const UserStats = ({ repos, following, followers }: UserStatsPropsType) => {
 	return (
 		<div className={styles.userStat}>
 			<div className={styles.info}>

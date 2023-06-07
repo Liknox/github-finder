@@ -1,13 +1,17 @@
 import { ILocalUser } from "../../types"
 import { UserStats } from "../UserStats"
+import { UserTitle } from "../UserTitle"
 
 import styles from "./UserCard.module.scss"
 
-type UserCardProps = ILocalUser
+type UserCardPropsType = ILocalUser
 
-export const UserCard = (props: UserCardProps) => {
+export const UserCard = (props: UserCardPropsType) => {
 	return (
 		<div className={styles.userCard}>
+			<img src={props.avatar} alt={props.name} className={styles.avatar} />
+			<UserTitle name={props.name} login={props.login} created={props.created} />
+			<p className={`${styles.bio}${props.bio ? "" : ` ${styles.empty}`}`}>{props.bio || "This profile has no bio."}</p>
 			<UserStats repos={props.repos} followers={props.followers} following={props.following} />
 		</div>
 	)
