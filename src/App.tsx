@@ -1,11 +1,14 @@
 import { useState } from "react"
+
 import { Header } from "./components/Header"
 import { Container } from "./components/Container"
 import { Search } from "./components/Search"
 import { UserCard } from "./components/UserCard"
+
 import { defaultUser } from "./mock"
-import { IGithubError, ILocalUser, IUser } from "./types"
 import { isGithubUser } from "./utils/typeGuards"
+import { extractLocalUser } from "./utils/extractLocalUser"
+import { IGithubError, ILocalUser, IUser } from "./types"
 
 const BASE_URL = "https://api.github.com/users/"
 
@@ -18,7 +21,7 @@ function App() {
 		const user = (await res.json()) as IUser | IGithubError
 
 		if (isGithubUser(user)) {
-			setUser(user)
+			setUser(extractLocalUser(user))
 		} else {
 			setUser(null)
 		}
@@ -28,7 +31,7 @@ function App() {
 		<Container>
 			<Header />
 			<Search hasError={!user} onSubmit={fetchUser} />
-			{user && <UserCard {...defaultUser} />}
+			{user && <UserCard {...user} />}
 		</Container>
 	)
 }

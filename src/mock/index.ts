@@ -2,7 +2,6 @@ import { ILocalUser } from "../types"
 
 export const defaultUser: ILocalUser = {
 	login: "Liknox",
-	id: 92331274,
 	avatar: "https://avatars.githubusercontent.com/u/92331274?v=4",
 	name: "Nazar Koval",
 	company: null,
