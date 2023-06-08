@@ -1,7 +1,7 @@
 export interface ILocalUser {
 	login: string
 	avatar: string
-   url: string
+	url: string
 	name: string
 	company: string | null
 	blog: string | null
@@ -18,7 +18,7 @@ export interface IUser {
 	login: string
 	id: number
 	avatar_url: string
-   html_url: string
+	html_url: string
 	name: string
 	company: string | null
 	blog: string | null

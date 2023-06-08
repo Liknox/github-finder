@@ -14,7 +14,11 @@ export const UserTitle = ({ name, login, created, url }: UserTitlePropsType) => 
 	return (
 		<div className={styles.userTitle}>
 			<h2>{name}</h2>
-			<h3><a href={url} target="_blank" rel="noreferrer">{login}</a></h3>
+			<h3>
+				<a href={url} target="_blank" rel="noreferrer">
+					{login}
+				</a>
+			</h3>
 			<span>{joinedDate}</span>
 		</div>
 	)

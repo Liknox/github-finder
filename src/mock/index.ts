@@ -3,7 +3,7 @@ import { ILocalUser } from "../types"
 export const defaultUser: ILocalUser = {
 	login: "Liknox",
 	avatar: "https://avatars.githubusercontent.com/u/92331274?v=4",
-   url: "https://github.com/Liknox",
+	url: "https://github.com/Liknox",
 	name: "Nazar Koval",
 	company: null,
 	blog: "t.me/Lead_director",

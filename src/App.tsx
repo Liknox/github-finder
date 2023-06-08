@@ -27,9 +27,9 @@ function App() {
 		}
 	}
 
-   const handleReset = () => {
-      setUser(defaultUser)
-   }
+	const handleReset = () => {
+		setUser(defaultUser)
+	}
 
 	return (
 		<Container>

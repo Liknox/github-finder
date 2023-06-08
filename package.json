@@ -8,7 +8,7 @@
 		"build": "tsc && vite build",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
-		"format": "prettier --write \"src/**/*.@(js|ts|jsx|tsx|css|scss)\"",
+		"format": "prettier --write \"src/**/*.@(js|ts|jsx|tsx|css|scss|module.css|module.scss)\"",
 		"component": "generate-react component"
 	},
 	"dependencies": {
