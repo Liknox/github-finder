@@ -5,7 +5,7 @@ export const defaultUser: ILocalUser = {
 	avatar: "https://avatars.githubusercontent.com/u/92331274?v=4",
 	name: "Nazar Koval",
 	company: null,
-	blog: "",
+	blog: "t.me/Lead_director",
 	location: "Lviv, Ukraine",
 	bio: "It's no problem in my local.",
 	twitter: null,
