@@ -1,4 +1,5 @@
 import { ILocalUser } from "../../types"
+import { UserInfo } from "../UserInfo"
 import { UserStats } from "../UserStats"
 import { UserTitle } from "../UserTitle"
 
@@ -13,6 +14,7 @@ export const UserCard = (props: UserCardPropsType) => {
 			<UserTitle name={props.name} login={props.login} created={props.created} />
 			<p className={`${styles.bio}${props.bio ? "" : ` ${styles.empty}`}`}>{props.bio || "This profile has no bio."}</p>
 			<UserStats repos={props.repos} followers={props.followers} following={props.following} />
+			<UserInfo blog={props.blog} company={props.company} location={props.location} twitter={props.twitter} />
 		</div>
 	)
 }
