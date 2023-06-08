@@ -13,9 +13,9 @@ type UserInfoPropsType = Pick<ILocalUser, "blog" | "company" | "location" | "twi
 export const UserInfo = ({ blog, company, location, twitter }: UserInfoPropsType) => {
 	const items: IInfoItemProps[] = [
 		{ icon: <LocationIcon />, text: location },
+		{ icon: <BlogIcon />, text: blog, isLink: true },
 		{ icon: <TwitterIcon />, text: twitter },
 		{ icon: <CompanyIcon />, text: company },
-		{ icon: <BlogIcon />, text: blog, isLink: true },
 	]
 
 	return (
