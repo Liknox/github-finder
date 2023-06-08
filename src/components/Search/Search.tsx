@@ -25,7 +25,7 @@ export const Search = ({ hasError, onSubmit }: ISearchProps) => {
 				<label htmlFor="search" className={styles.label}>
 					<SearchIcon />
 				</label>
-				<input type="text" className={styles.textField} id="search" name="username" placeholder="Search Github user..." />
+				<input type="text" className={styles.textField} id="search" name="username" placeholder="Search GitHub user..." />
 				{hasError && <div className={styles.error}>No result</div>}
 				<MyButton>Search</MyButton>
 			</div>
