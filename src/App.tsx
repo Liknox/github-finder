@@ -15,6 +15,9 @@ function App() {
 		const url = BASE_URL + username
 		const res = await fetch(url)
 		const user = (await res.json()) as IUser | IGithubError
+
+      
+      
 	}
 
 	return (
