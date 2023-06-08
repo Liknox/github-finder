@@ -27,10 +27,14 @@ function App() {
 		}
 	}
 
+   const handleReset = () => {
+      setUser(defaultUser)
+   }
+
 	return (
 		<Container>
-			<Header />
-			<Search hasError={!user} onSubmit={fetchUser} />
+			<Header handleReset={handleReset} />
+			<Search hasError={user === null ? true : false} onSubmit={fetchUser} />
 			{user && <UserCard {...user} />}
 		</Container>
 	)
