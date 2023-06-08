@@ -13,7 +13,7 @@ export const Search = ({ hasError, onSubmit }: ISearchProps) => {
 		e.preventDefault()
 		const text = e.currentTarget.username.value
 
-		if (text) {
+		if (text.trim()) {
 			onSubmit(text)
 			e.currentTarget.reset()
 		}
