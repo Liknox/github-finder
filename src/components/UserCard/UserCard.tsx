@@ -13,7 +13,7 @@ export const UserCard = (props: UserCardPropsType) => {
 			<img src={props.avatar} alt={props.name} className={styles.avatar} />
 			<UserTitle name={props.name} login={props.login} created={props.created} url={props.url} />
 			<p className={`${styles.bio}${props.bio ? "" : ` ${styles.empty}`}`}>{props.bio || "This profile has no bio."}</p>
-			<UserStats repos={props.repos} followers={props.followers} following={props.following} name={props.login}  />
+			<UserStats repos={props.repos} followers={props.followers} following={props.following} name={props.login} />
 			<UserInfo blog={props.blog} company={props.company} location={props.location} twitter={props.twitter} />
 		</div>
 	)
