@@ -14,9 +14,10 @@ export const UserInfo = ({ blog, company, location, twitter }: UserInfoPropsType
 	const items: IInfoItemProps[] = [
 		{ icon: <LocationIcon />, text: location },
 		{ icon: <BlogIcon />, text: blog, isLink: true },
-		{ icon: <TwitterIcon />, text: twitter },
+		{ icon: <TwitterIcon />, text: twitter, twit: true },
 		{ icon: <CompanyIcon />, text: company },
 	]
+      console.log(twitter)
 
 	return (
 		<div className={styles.userInfo}>
