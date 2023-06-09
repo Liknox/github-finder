@@ -3,7 +3,18 @@ import styles from "./UserStats.module.scss"
 
 export type UserStatsPropsType = Pick<ILocalUser, "followers" | "following" | "repos">
 
+interface IStats {
+	title: string
+	quantity: number
+}
+
 export const UserStats = ({ repos, following, followers }: UserStatsPropsType) => {
+	const stats: IStats[] = [
+		{ title: "Repos", quantity: repos },
+		{ title: "Followers", quantity: following },
+		{ title: "Following", quantity: followers },
+	]
+
 	return (
 		<div className={styles.userStats}>
 			<div className={styles.info}>
