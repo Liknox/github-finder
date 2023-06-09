@@ -5,7 +5,7 @@ export type UserStatsPropsType = Pick<ILocalUser, "followers" | "following" | "r
 
 export const UserStats = ({ repos, following, followers }: UserStatsPropsType) => {
 	return (
-		<div className={styles.userStat}>
+		<div className={styles.userStats}>
 			<div className={styles.info}>
 				<div className={styles.infoTitle}>Repos</div>
 				<div className={styles.infoNumber}>{repos}</div>

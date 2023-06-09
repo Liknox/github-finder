@@ -10,7 +10,7 @@
 	}
 }
 
-.userStat {
+.userStats {
 	background-color: var(--stat-bg);
 	color: var(--stat-color);
 	padding: 15px 32px;
@@ -19,20 +19,3 @@
 	grid-template-columns: repeat(3, 1fr);
 }
 
-.info {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-
-	&Title {
-		color: var(--gray-200);
-		font-size: 0.75rem;
-		line-height: 1.5;
-	}
-
-	&Number {
-		font-size: 1.25rem;
-		line-height: 1.5;
-		font-weight: 700;
-	}
-}
