@@ -13,9 +13,7 @@ export const InfoItem = ({ icon, text, isLink, twit }: IInfoItemProps) => {
 
 	if (isLink) {
 		currentHref = text && text.startsWith("http") ? text : `https://${text}`
-	}
-
-	if (twit) {
+	} else if (twit) {
 		currentHref = `https://twitter.com/${text}`
 	}
 
@@ -23,11 +21,7 @@ export const InfoItem = ({ icon, text, isLink, twit }: IInfoItemProps) => {
 		<div className={`${styles.infoItem}${text ? "" : ` ${styles.empty}`}`}>
 			{icon}
 			<div>
-				{isLink && text ? (
-					<a href={currentHref} target="_blank" rel="noreferrer" className={styles.link}>
-						{currentText}
-					</a>
-				) : twit && text ? (
+				{(isLink && text) || (twit && text) ? (
 					<a href={currentHref} target="_blank" rel="noreferrer" className={styles.link}>
 						{currentText}
 					</a>
