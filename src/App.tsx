@@ -13,7 +13,6 @@ import { IGithubError, ILocalUser, IUser } from "./types"
 const BASE_URL = "https://api.github.com/users/"
 
 function App() {
-   console.log("render")
 	const initialUser: ILocalUser = (getItemFromLocalStorage("user") as ILocalUser) || defaultUser
 	const [user, setUser] = useState<ILocalUser | null>(initialUser)
 
@@ -44,7 +43,7 @@ function App() {
 
 	const handleReset = () => {
 		setUser(defaultUser)
-      localStorage.removeItem("user")
+		localStorage.removeItem("user")
 	}
 
 	return (
