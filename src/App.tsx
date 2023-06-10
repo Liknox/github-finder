@@ -13,7 +13,9 @@ import { IGithubError, ILocalUser, IUser } from "./types"
 const BASE_URL = "https://api.github.com/users/"
 
 function App() {
-	const [user, setUser] = useState<ILocalUser | null>(defaultUser)
+   console.log("render")
+	const initialUser: ILocalUser = (getItemFromLocalStorage("user") as ILocalUser) || defaultUser
+	const [user, setUser] = useState<ILocalUser | null>(initialUser)
 
 	const fetchUser = async (username: string) => {
 		const url = BASE_URL + username
@@ -22,9 +24,22 @@ function App() {
 
 		if (isGithubUser(user)) {
 			setUser(extractLocalUser(user))
+			localStorage.setItem("user", JSON.stringify(extractLocalUser(user)))
 		} else {
 			setUser(null)
 		}
+	}
+
+	function getItemFromLocalStorage(key: string): unknown {
+		const item = localStorage.getItem(key)
+		if (item) {
+			try {
+				return JSON.parse(item)
+			} catch (error) {
+				console.error(`Error parsing item from LocalStorage: ${error}`)
+			}
+		}
+		return null
 	}
 
 	const handleReset = () => {

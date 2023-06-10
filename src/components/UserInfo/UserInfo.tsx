@@ -17,8 +17,6 @@ export const UserInfo = ({ blog, company, location, twitter }: UserInfoPropsType
 		{ icon: <TwitterIcon />, text: twitter, twit: true },
 		{ icon: <CompanyIcon />, text: company },
 	]
-      console.log(twitter)
-
 	return (
 		<div className={styles.userInfo}>
 			{items.map((item, index) => (
