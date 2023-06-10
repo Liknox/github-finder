@@ -44,7 +44,7 @@ function App() {
 
 	const handleReset = () => {
 		setUser(defaultUser)
-      localStorage.setItem("user", JSON.stringify(defaultUser))
+      localStorage.removeItem("user")
 	}
 
 	return (
