@@ -5,7 +5,7 @@ import SunIcon from "../../assets/icon-sun.svg"
 import styles from "./ThemeSwitcher.module.scss"
 
 export const ThemeSwitcher = () => {
-	const isDarkFromLocal = localStorage.getItem("theme") === "true"
+	const isDarkFromLocal = localStorage.getItem("theme") === String(true)
 	const [isDark, setIsDark] = useState(isDarkFromLocal)
 	const themeText = isDark ? "Light" : "Dark"
 	const ThemeIcon = isDark ? SunIcon : MoonIcon

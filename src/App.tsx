@@ -9,8 +9,7 @@ import { defaultUser } from "./mock"
 import { isGithubUser } from "./utils/typeGuards"
 import { extractLocalUser } from "./utils/extractLocalUser"
 import { IGithubError, ILocalUser, IUser } from "./types"
-
-const BASE_URL = "https://api.github.com/users/"
+import { BASE_URL } from "./api"
 
 function App() {
 	const initialUser: ILocalUser = (getItemFromLocalStorage("user") as ILocalUser) || defaultUser
