@@ -2,7 +2,6 @@ import { Header } from "./components/Header"
 import { Container } from "./components/Container"
 import { Search } from "./components/Search"
 import { UserCard } from "./components/UserCard"
-
 import useUserData from "./hooks/useUserData"
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
 	return (
 		<Container>
 			<Header handleReset={resetUser} />
-			<Search hasError={user === null ? true : false} onSubmit={fetchUser} />
+			<Search hasError={user === null} onSubmit={fetchUser} />
 			{user && <UserCard {...user} />}
 		</Container>
 	)

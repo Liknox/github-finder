@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { MyButton } from "../MyButton"
 import SearchIcon from "../../assets/icon-search.svg"
 
@@ -8,7 +9,7 @@ interface ISearchProps {
 	onSubmit: (text: string) => void
 }
 
-export const Search = ({ hasError, onSubmit }: ISearchProps) => {
+export const Search = memo(({ hasError, onSubmit }: ISearchProps) => {
 	function handleSubmit(e: React.FormEvent<HTMLFormElement & { username: HTMLInputElement }>) {
 		e.preventDefault()
 		const text = e.currentTarget.username.value
@@ -31,4 +32,4 @@ export const Search = ({ hasError, onSubmit }: ISearchProps) => {
 			</div>
 		</form>
 	)
-}
+})

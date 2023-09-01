@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { ILocalUser } from "../../types"
 import { UserInfo } from "../UserInfo"
 import { UserStats } from "../UserStats"
@@ -7,7 +8,7 @@ import styles from "./UserCard.module.scss"
 
 type UserCardPropsType = ILocalUser
 
-export const UserCard = (props: UserCardPropsType) => {
+export const UserCard = memo((props: UserCardPropsType) => {
 	return (
 		<div className={styles.userCard}>
 			<img src={props.avatar} alt={props.name} className={styles.avatar} />
@@ -17,4 +18,4 @@ export const UserCard = (props: UserCardPropsType) => {
 			<UserInfo blog={props.blog} company={props.company} location={props.location} twitter={props.twitter} />
 		</div>
 	)
-}
+})
